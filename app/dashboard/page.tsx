@@ -1,18 +1,13 @@
-// dashboard/page.tsx  (root-level route)
+// app/dashboard/page.tsx
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
-
-// Use the alias and load on the client only (charts & window APIs)
-const DashboardPageClient = dynamic(
-  () => import("@/components/DashboardPageClient"),
-  { ssr: false }
-);
+import DashboardPageClient from "@/components/DashboardPageClient"; // Client Component (has "use client")
 
 export const metadata: Metadata = {
   title: "Dashboard | ESGbyAI",
   description: "Track emissions, savings, initiatives, and pillar maturity.",
 };
 
-export default function Page() {
+export default function DashboardPage() {
+  // Server Component rendering a Client Component is fully supported
   return <DashboardPageClient />;
 }
