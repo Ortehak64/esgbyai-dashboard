@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+node_modules/
+.next/
+out/
+dist/
+next/
+*.log
+.env*
+.DS_Store
+# accidental files
+esgbyai-dashboard@0.1.0
